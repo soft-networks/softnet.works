@@ -27,6 +27,7 @@ let PALETTE = {
   fruitBrown: "#75492B",
   pink: "#FF9EE5",
   contrastGreen: "#E6F8DC",
+  darkGreen: "#94A696",
   black: "#000000",
   leafGray: "rgb(200,200,200)",
   fruitGray: "rgb(100,100,100)",
@@ -36,7 +37,7 @@ let PALETTE = {
 let BGCOLOR =  undefined;
 let COL1 = PALETTE.black;
 let MAIN_HIGHLIGHT_COLOR = PALETTE.leafGray;
-let HIGHLIGHTCOLORS = [PALETTE.pink, PALETTE.fruitGray];
+let HIGHLIGHTCOLORS = [PALETTE.pink, PALETTE.pink];
 
 if (!USE_BW_COLORS) {
   //Browns
@@ -55,7 +56,7 @@ class Grid {
 
     for (let i = 0; i < this.nRows; i++) {
       for (let j = 0; j < this.nCols; j++) {
-  
+
         this.cells.push(0);
       }
     }

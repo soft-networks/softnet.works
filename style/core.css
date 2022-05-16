@@ -17,7 +17,7 @@
   --stackSpacing: var(--s0);
 
   --gray: #eeeeee;
-  --black: #AD9381;
+  --black: black;
   --white: white;
   --contrast: yellow;
   
@@ -42,12 +42,21 @@ a {
   background-color: var(--contrast);
 }
 
+.noEvents {
+  pointer-events: none;
+}
+.hasEvents {
+  pointer-events: all;
+}
 
 .padded {
   padding: var(--spacing);
 }
 .padded\:s1 {
   padding: var(--s1);
+}
+.marginTop {
+  margin-top:  var(--spacing);
 }
 .border {
   border: 1px solid var(--black);
@@ -78,6 +87,9 @@ a {
 .noOverflowX {
   overflow: hidden;
 }
+.hide {
+  display: none;
+}
 .stack {
   display: flex; 
   flex-direction: column;
@@ -94,7 +106,9 @@ a {
 .horizontal-stack {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
+
 
 .horizontal-stack > * + * {
   margin-left: var(--stackSpacing);
@@ -109,8 +123,9 @@ a {
 
 
 .narrow {
-  width: calc(512px - 2 * var(--spacing));
+  width: calc(50ch - 2 * var(--spacing));
   max-width: 100%;
+  z-index: 2;
 }
 
 input {

@@ -11,16 +11,17 @@
 
 :root {
 
-  --s0: 1.05em;
+  --s0: 1.08em;
   --ratio: 1.6;
   /* --dark: #987349;, #667260, #6b6257,667260, 80938d, #839380*/
   /* --dark:  #839380; */
-  --dark: #D9CEB8;
+  --dark: #E6F8DC;
 
 
   /* --light: #BFA07C, #c6d4b4*/
   /* --light: #c6d4b4; */
   --light: #FFFEF8;
+  /* --light: rgba(255, 255, 255, 0.7); */
   --white: white;
 
   /* -- contrast: #F5DBF7, C6D4B4*/
@@ -36,7 +37,12 @@ body {
   font-size: var(--s0);
   line-height: 1.314;
 }
-
+#bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 .terminal {
   font-family: 'Terminal Grotesque', monospace;
   font-size: 118%;
@@ -61,6 +67,7 @@ body {
   opacity: 0;
   animation: fadeIn 0.5s forwards;
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
