@@ -55,6 +55,7 @@ const backgroundsketch = (p) => {
   let xs ;
   let ys ;
 
+  let mp = {x: 0, y:0};
   p.preload = () => {
     grass = p.loadImage("assets/IMG_1569.jpeg");
   };
@@ -63,7 +64,7 @@ const backgroundsketch = (p) => {
     cnv.id("bg-container")
     p.pixelDensity(1);
     
-    p.frameRate(12);
+    p.frameRate(8);
     p.noStroke();
     drawPixels();
      xs = p.width / grass.width;
@@ -74,15 +75,14 @@ const backgroundsketch = (p) => {
     grass.loadPixels();
 
     for (let x = 0; x < grass.width; x = x + ps) {
-      for (let y = 0; y < grass.height; y = y + ps) {
+      for (let y = 0; y < grass.height ; y = y + ps) {
         let index = (x  + grass.width * y) * 4;
         let r = grass.pixels[index];
         let g = grass.pixels[index + 1];
         let b = grass.pixels[index + 2];
         // let a = grass.pixels[index + 3];
 
-
-        if (r > 125 && g > 125 & b > 125) {
+        if (g > 254) {
           wos.push({ x: x, y: y, c: HIGHLIGHTCOLORS[0], g: g});
         }
       }
@@ -91,12 +91,10 @@ const backgroundsketch = (p) => {
   }
   p.draw = () => {
     
-  
     drawWind();
     
     p.fill("black");
-    p.square(p.mouseX, p.mouseY, ps);
-
+    p.square(mp.x, mp.y, ps);
     
     if (t > 100) {
       t = t --;
@@ -108,13 +106,18 @@ const backgroundsketch = (p) => {
     ys = p.height / grass.height;
     drawWind();
   }
+  p.mouseMoved = () => {
+    mp = {x: p.mouseX, y: p.mouseY};
+  }
   p.mouseDragged = () => {
     wos.push({x: p.mouseX / xs, y: p.mouseY / ys, g: 255});
   }
   function drawWind(){
     p.clear();
-    let wind = rnd(-0.5,0.5);
+    let wind = rnd(-1,1);
 
+    mp.x = mp.x + 1
+    mp.y = mp.y + wind;
     
     for (let i =0 ; i<wos.length; i++) {
       
@@ -129,7 +132,7 @@ const backgroundsketch = (p) => {
   
       if (wo.g > t) {
         p.fill(HIGHLIGHTCOLORS[0]);
-        p.square(round(wo.x * xs), round(wo.y * ys), ps);
+        p.square(round(wo.x * xs),  round(wo.y * ys), ps);
       }
     }
   }

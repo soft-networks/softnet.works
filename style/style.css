@@ -15,17 +15,17 @@
   --ratio: 1.6;
   /* --dark: #987349;, #667260, #6b6257,667260, 80938d, #839380*/
   /* --dark:  #839380; */
-  --dark: #E6F8DC;
+  --dark: #d8ffdb;
 
 
   /* --light: #BFA07C, #c6d4b4*/
   /* --light: #c6d4b4; */
-  --light: #FFFEF8;
+  --light: #fffef5;
   /* --light: rgba(255, 255, 255, 0.7); */
   --white: white;
 
   /* -- contrast: #F5DBF7, C6D4B4*/
-  --contrast: #E6F8DC;
+  --contrast: #D9CEB8;
 }
 
 a:hover {
@@ -49,6 +49,11 @@ body {
   letter-spacing: 0ch;
 }
 
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .darkFill {
   background: var(--dark);
 }
