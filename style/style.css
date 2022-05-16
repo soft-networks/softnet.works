@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Authentic Sans';
+  src: url('/assets/AUTHENTICSans-90.otf');
+}
+
+@font-face {
+  font-family: 'Terminal Grotesque';
+  src: url('/assets/terminal-grotesque.ttf');
+}
+
+
+:root {
+
+  --s0: 1.05em;
+  --ratio: 1.6;
+  /* --dark: #987349;, #667260, #6b6257,667260, 80938d, #839380*/
+  /* --dark:  #839380; */
+  --dark: #D9CEB8;
+
+
+  /* --light: #BFA07C, #c6d4b4*/
+  /* --light: #c6d4b4; */
+  --light: #FFFEF8;
+  --white: white;
+
+  /* -- contrast: #F5DBF7, C6D4B4*/
+  --contrast: #E6F8DC;
+}
+
+a:hover {
+  background: var(--contrast);
+}
+body {
+  background: var(--dark);
+  font-family: 'Authentic Sans', Helvetica, sans-serif;
+  font-size: var(--s0);
+  line-height: 1.314;
+}
+
+.terminal {
+  font-family: 'Terminal Grotesque', monospace;
+  font-size: 118%;
+  letter-spacing: 0ch;
+}
+
+.darkFill {
+  background: var(--dark);
+}
+
+.lightFill {
+  background: var(--light);
+}
+
+
+.button:hover {
+  background: var(--white);
+  border: 1px solid black;
+}
+
+.fade {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+#canvas-container {
+  --bleedEdge: calc(var(--spacing) * 0.75);
+  width: calc(100% + 2 * var(--bleedEdge));
+  position: relative;
+  left: calc(-1 * var(--bleedEdge));
+}
+
+canvas {
+  image-rendering: pixelated;
+}
+
+
+@media only screen and (max-width: 400px) {
+	/* Mobile related CSS goes here (400px and under) */
+  :root {
+    --s0: 1em;
+  }
+}

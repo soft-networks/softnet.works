@@ -1,0 +1,121 @@
+
+:root {
+  --ratio: 1.4;
+  --s0: 1em;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-5: calc(var(--s-4) / var(--ratio));
+
+  --spacing: var(--s1);
+  --stackSpacing: var(--s0);
+
+  --gray: #eeeeee;
+  --black: #AD9381;
+  --white: white;
+  --contrast: yellow;
+  
+  
+}
+
+html, body {
+  width: 100%; height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+*::selection {
+  background-color: var(--contrast);
+}
+
+
+.padded {
+  padding: var(--spacing);
+}
+.padded\:s1 {
+  padding: var(--s1);
+}
+.border {
+  border: 1px solid var(--black);
+}
+.fullBleed {
+  width: 100%;
+  height: 100%;
+}
+.fullHeight {
+  height: 100%;
+}
+.fullWidth {
+  width: 100%;
+}
+
+.whiteFill {
+  background: var(--white);
+}
+.contrastFill {
+  background: var(--contrast);
+}
+.caption {
+  font-size: var(--s-1);
+}
+.noOverflow {
+  overflow: hidden;
+}
+.noOverflowX {
+  overflow: hidden;
+}
+.stack {
+  display: flex; 
+  flex-direction: column;
+}
+
+.stack > * + * {
+  margin-top: var(--stackSpacing);
+}
+
+.stack .align-end {
+  margin-top: auto;
+}
+
+.horizontal-stack {
+  display: flex;
+  flex-direction: row;
+}
+
+.horizontal-stack > * + * {
+  margin-left: var(--stackSpacing);
+}
+.horizontal-stack.no-gap > * + * {
+  margin-left: 0;
+}
+
+.flex-1 {
+  flex: 1
+}
+
+
+.narrow {
+  width: calc(512px - 2 * var(--spacing));
+  max-width: 100%;
+}
+
+input {
+  all: unset;
+}
+input::placeholder {
+  color: inherit;
+}
