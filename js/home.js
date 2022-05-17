@@ -7,7 +7,9 @@ const homesketch = (p) => {
   console.log(GRID_SIZE);
   const canvasaspect = 3.6;
 
-  let grid = new Grid(GRID_SIZE, GRID_SIZE / canvasaspect);
+  let TREE_HEIGHT =  round(BRANCH_LENGTH * MAX_DEPTH * 3.6);
+
+  let grid = new Grid(GRID_SIZE, TREE_HEIGHT);
   let trees = [];
   let windObjects = [];
   let drawHelper = new DrawGrid(p, grid, cellsize);
@@ -27,7 +29,7 @@ const homesketch = (p) => {
   p.setup = () => {
     console.log("lets go");
     homeSetup();
-    canvas = p.createCanvas(canvassize, canvassize / canvasaspect);
+    canvas = p.createCanvas(canvassize, TREE_HEIGHT * cellsize);
     canvas.parent("#canvas-container");
     canvas.imageSmoothingEnabled = false;
     p.frameRate(12);
@@ -54,13 +56,15 @@ const backgroundsketch = (p) => {
   let t = 253;
   let xs ;
   let ys ;
+  let container = document.getElementById("main-container");
+
 
   let mp = {x: 0, y:0};
   p.preload = () => {
     grass = p.loadImage("assets/IMG_1569.jpeg");
   };
   p.setup = () => {
-    let cnv = p.createCanvas(p.windowWidth, p.windowHeight);
+    let cnv = p.createCanvas(container.offsetWidth, container.offsetHeight);
     cnv.id("bg-container")
     p.pixelDensity(1);
     
@@ -109,6 +113,7 @@ const backgroundsketch = (p) => {
   }
 
   p.windowResized = () => {
+    p.resizeCanvas(container.offsetWidth, container.offsetHeight)
     xs = p.width / grass.width;
     ys = p.height / grass.height;
     drawWind();

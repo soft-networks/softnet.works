@@ -147,9 +147,13 @@ canvas {
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
 	/* Mobile related CSS goes here (400px and under) */
   :root {
-    --s0: 1em;
+    --s0: 1.03em;
+    --spacing: var(--s0);
+  }
+  .center {
+    display: block;
   }
 }
