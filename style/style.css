@@ -13,14 +13,14 @@
 
   --s0: 1.08em;
   --ratio: 1.6;
-  --dark: rgb(170, 199, 214);
-  --black: rgb(120, 180, 165);
+  --dark: rgb(189, 222, 239);
+  --black: rgb(89, 152, 133);
   --light: #fffef5;
   --white: white;
   --default: #eee;
 
   
-  --animLength: 1s;
+  --animLength: 12s;
   --animDelay: 1.6s;
   
   /* -- contrast: #F5DBF7, C6D4B4*/
