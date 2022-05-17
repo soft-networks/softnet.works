@@ -13,15 +13,15 @@
 
   --s0: 1.08em;
   --ratio: 1.6;
-  --dark: hsl(137, 42%, 75%);
-  --black: hsl(137, 80%, 25%);
+  --dark: rgb(170, 199, 214);
+  --black: rgb(120, 180, 165);
   --light: #fffef5;
   --white: white;
   --default: #eee;
 
   
-  --animLength: 8s;
-  --animDelay: 1.8s;
+  --animLength: 1s;
+  --animDelay: 1.6s;
   
   /* -- contrast: #F5DBF7, C6D4B4*/
   --contrast: #D9CEB8;
@@ -45,6 +45,7 @@ body {
   z-index: 1;
   opacity: 0;
   animation: fadeIn var(--animLength) var(--animDelay) forwards;
+
 }
 .terminal {
   font-family: 'Terminal Grotesque', monospace;
@@ -152,6 +153,7 @@ canvas {
   :root {
     --s0: 1.03em;
     --spacing: var(--s0);
+    --stackSpacing: var(--s-1);
   }
   .center {
     display: block;

@@ -68,13 +68,11 @@ const backgroundsketch = (p) => {
     cnv.id("bg-container")
     p.pixelDensity(1);
     
-    p.frameRate(8);
+    p.frameRate(12);
     p.noStroke();
     drawPixels();
     xs = p.width / grass.width;
     ys = p.height / grass.height;
-    p.noCursor();
-    p.colorMode(p.HSB);
   };
   function drawPixels() {
     grass.loadPixels();
@@ -98,10 +96,6 @@ const backgroundsketch = (p) => {
     
     drawWind();
     
-    for (let i =0 ; i< 3; i++) {
-      p.fill("black");
-      p.square(mp.x +i * ps, mp.y +i * ps, ps);
-    }
     if (p.mouseIsPressed) {
       wos.push({x: p.mouseX / xs, y: p.mouseY / ys, g: 255});
     }
@@ -118,15 +112,9 @@ const backgroundsketch = (p) => {
     ys = p.height / grass.height;
     drawWind();
   }
-  p.mouseMoved = () => {
-    mp = {x: p.mouseX, y: p.mouseY};
-  }
-  p.mouseDragged = () => {
-    mp = {x: p.mouseX, y: p.mouseY};
-  }
   function drawWind(){
     p.clear();
-    let wind = rnd(-1,1);
+    let wind = rnd(-0.9,0.9);
 
     mp.x = mp.x + 1
     mp.y = mp.y + wind;
@@ -143,7 +131,8 @@ const backgroundsketch = (p) => {
       let wo = wos[i];
   
       if (wo.g > t) {
-        p.fill(137, 42, 75);
+        p.fill(120, 180, 165);
+        // p.square(round(wo.x * xs),  round(wo.y * ys), ps);
         p.square(round(wo.x * xs),  round(wo.y * ys), ps);
       }
     }
