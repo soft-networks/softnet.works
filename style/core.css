@@ -78,6 +78,7 @@ a {
 .contrastFill {
   background: var(--contrast);
 }
+
 .caption {
   font-size: var(--s-1);
 }
