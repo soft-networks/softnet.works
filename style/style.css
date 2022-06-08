@@ -1,13 +1,3 @@
-@font-face {
-  font-family: 'Authentic Sans';
-  src: url('/assets/AUTHENTICSans-90.otf');
-}
-
-@font-face {
-  font-family: 'Terminal Grotesque';
-  src: url('/assets/terminal-grotesque.ttf');
-}
-
 
 a:hover {
   background: var(--contrast);

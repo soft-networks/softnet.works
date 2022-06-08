@@ -1,4 +1,4 @@
-const WAIT_TIME = 1000;
+const WAIT_TIME = 3000;
 
 const logoSketch = (p) => {
 
@@ -10,6 +10,7 @@ const logoSketch = (p) => {
   let trees = [];
   let windObjects = [];
   let myFont;
+  let xOf = 0.05;
 
   function logoSetup() {
     trees.push(
@@ -27,11 +28,11 @@ const logoSketch = (p) => {
   }
   p.preload = () => {
     myFont = p.loadFont('assets/terminal-grotesque.ttf');
-
   }
   p.setup = () => {
     logoSetup();
     canvas = p.createCanvas(canvassize, canvassize);
+
     p.frameRate(12);
 
     p.noSmooth();
@@ -39,28 +40,30 @@ const logoSketch = (p) => {
     p.textFont(myFont);
     p.textSize(20);
 
-    p.push();
-    p.noStroke();
-    p.fill("black");
-    p.text("soft", p.width * 0.51, p.height * 0.55);
-    p.text("networks", p.width * 0.51, p.height * 0.55 + 13);
-    p.pop();
     
   };
   p.draw = () => {
-    p.noStroke();
-    drawHelper.drawNew();
-    moveAndDrawDust(windObjects, drawHelper);
-    growTrees(trees);
+    p.translate(-xOf * canvassize, 0);
 
-  };
-  p.keyPressed = () => {
-    if (p.key == "s") {
-      console.log("saving");
-      p.saveCanvas("logo" + Date.now(), "png");
-    }
+    p.background("#fffef5");
+
+    p.noStroke();
+    drawHelper.drawAll();
+    moveAndDrawDust(windObjects, drawHelper);
+
+    if (p.millis() > WAIT_TIME)
+      growTrees(trees);
+
+
+    p.push();
+    p.noStroke();
+    p.fill("black");
+    p.text("soft", p.width * 0.513, p.height * 0.55);
+    p.text("networks", p.width * 0.513, p.height * 0.55 + 13);
+    p.pop();
+
   };
 };
 
 
-setTimeout(() => new p5(logoSketch), WAIT_TIME);
+setTimeout(() => new p5(logoSketch), 0);
