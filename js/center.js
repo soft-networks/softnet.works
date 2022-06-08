@@ -9,7 +9,7 @@ const logoSketch = (p) => {
   let drawHelper = new DrawGrid(p, grid, cellsize);
   let trees = [];
   let windObjects = [];
-
+  let myFont;
 
   function logoSetup() {
     trees.push(
@@ -25,6 +25,10 @@ const logoSketch = (p) => {
       windObjects.push(cv(grid.nCols / rnd(1, 10), grid.nRows * 0.45 + rnd(-5,5)));
     }
   }
+  p.preload = () => {
+    myFont = p.loadFont('assets/terminal-grotesque.ttf');
+
+  }
   p.setup = () => {
     logoSetup();
     canvas = p.createCanvas(canvassize, canvassize);
@@ -32,7 +36,7 @@ const logoSketch = (p) => {
 
     p.noSmooth();
 
-    p.textFont("Terminal Grotesque");
+    p.textFont(myFont);
     p.textSize(20);
 
     p.push();
