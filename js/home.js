@@ -1,11 +1,7 @@
 const homesketch = (p) => {
   const containerSize = document.getElementById("canvas-container").offsetWidth * 1.02;
   const canvassize = containerSize;
-  // const canvassize = 512;
-  // GRID_SIZE = Math.min(canvassize / cellsize, GRID_SIZE);
   GRID_SIZE = floor(canvassize / cellsize);
-  console.log(GRID_SIZE);
-  const canvasaspect = 3.6;
 
   let TREE_HEIGHT =  round(BRANCH_LENGTH * MAX_DEPTH * 3.6);
 
@@ -27,11 +23,11 @@ const homesketch = (p) => {
     }
   }
   p.setup = () => {
-    console.log("lets go");
     homeSetup();
     canvas = p.createCanvas(canvassize, TREE_HEIGHT * cellsize);
     canvas.parent("#canvas-container");
     canvas.imageSmoothingEnabled = false;
+    p.noSmooth();
     p.frameRate(12);
   };
   p.draw = () => {
@@ -46,8 +42,6 @@ const homesketch = (p) => {
     p.resizeCanvas(containerSize, p.height);
   };
 };
-new p5(homesketch);
-
 const backgroundsketch = (p) => {
   let grass;
   let ps = 2;
@@ -124,9 +118,6 @@ const backgroundsketch = (p) => {
     }
   }
 };
-new p5(backgroundsketch);
-
-
 const enterEmail = (el) => {
   el.placeholder = "enter your email";
 }
@@ -134,3 +125,5 @@ const enterEmail = (el) => {
 const resetPlaceholder = (el) => {
   el.placeholder = "sign up for mailing list";
 }
+new p5(homesketch);
+new p5(backgroundsketch);

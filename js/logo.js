@@ -1,4 +1,4 @@
-const WAIT_TIME = 1000;
+const WAIT_TIME = 0;
 
 const logoSketch = (p) => {
 

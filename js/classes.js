@@ -20,13 +20,13 @@ let LOGO_PARAMS = {
   },
 };
 
-let USE_BW_COLORS = true;
+let USE_BW_COLORS = false;
 
 let PALETTE = {
   leafBrown: "#AD9381",
   fruitBrown: "#75492B",
   pink: "#FF9EE5",
-  darkGreen: "#94A696",
+  darkGreen: "rgb(70, 116, 91)",
   black: "#000000",
   leafGray: "rgb(200,200,200)",
   fruitGray: "rgb(100,100,100)",
@@ -41,7 +41,7 @@ let HIGHLIGHTCOLORS = [PALETTE.pink, PALETTE.pink];
 
 if (!USE_BW_COLORS) {
   //Blue bg
-  MAIN_HIGHLIGHT_COLOR = "rgb(120, 180, 165)";
+  MAIN_HIGHLIGHT_COLOR = PALETTE.darkGreen;
   HIGHLIGHTCOLORS = [PALETTE.pink, PALETTE.pink];
 }
 
