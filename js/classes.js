@@ -26,7 +26,6 @@ let PALETTE = {
   leafBrown: "#AD9381",
   fruitBrown: "#75492B",
   pink: "#FF9EE5",
-  contrastGreen: "#E6F8DC",
   darkGreen: "#94A696",
   black: "#000000",
   leafGray: "rgb(200,200,200)",
@@ -39,11 +38,11 @@ let COL1 = PALETTE.black;
 let MAIN_HIGHLIGHT_COLOR = PALETTE.leafGray;
 let HIGHLIGHTCOLORS = [PALETTE.pink, PALETTE.pink];
 
+
 if (!USE_BW_COLORS) {
-  //Browns
-  MAIN_HIGHLIGHT_COLOR = PALETTE.leafBrown;
-  HIGHLIGHTCOLORS = [PALETTE.fruitBrown, PALETTE.fruitBrown];
-  HIGHLIGHTCOLORS = [PALETTE.contrastGreen, PALETTE.pink];
+  //Blue bg
+  MAIN_HIGHLIGHT_COLOR = "rgb(120, 180, 165)";
+  HIGHLIGHTCOLORS = [PALETTE.pink, PALETTE.pink];
 }
 
 

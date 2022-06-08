@@ -15,14 +15,22 @@
 
   --spacing: var(--s1);
   --stackSpacing: var(--s0);
-
-  --gray: #eeeeee;
-  --black: black;
+  
+  --dark: rgb(189, 222, 239);
+  --black: rgb(70, 116, 91);
+  --light: #fffef5;
   --white: white;
-  --contrast: yellow;
+  --default: #eee;
+
   
+  --animLength: 12s;
+  --animDelay: 1.6s;
   
+  /* -- contrast: #F5DBF7, C6D4B4*/
+  --contrast: #D9CEB8;
+
 }
+
 
 html, body {
   width: 100%; height: 100%;
@@ -81,6 +89,7 @@ a {
 
 .caption {
   font-size: var(--s-1);
+  color: var(--black);
 }
 .noOverflow {
   overflow: hidden;
@@ -124,7 +133,7 @@ a {
 
 
 .narrow {
-  width: calc(50ch - 2 * var(--spacing));
+  width: calc(512px - 2 * var(--spacing));
   max-width: 100%;
   z-index: 2;
 }
@@ -134,4 +143,10 @@ input {
 }
 input::placeholder {
   color: inherit;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,3 +1,5 @@
+const WAIT_TIME = 1000;
+
 const logoSketch = (p) => {
 
   const canvassize = 512;
@@ -41,7 +43,6 @@ const logoSketch = (p) => {
     }
   };
 };
-
 
 
 const bannerSketch = (p) => {
@@ -92,5 +93,5 @@ const bannerSketch = (p) => {
   }
 };
 
-new p5(logoSketch);
-new p5(bannerSketch);
+setTimeout(() => new p5(logoSketch), WAIT_TIME);
+setTimeout(() => new p5(bannerSketch), WAIT_TIME);

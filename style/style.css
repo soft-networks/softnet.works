@@ -9,24 +9,6 @@
 }
 
 
-:root {
-
-  --s0: 1.08em;
-  --ratio: 1.6;
-  --dark: rgb(189, 222, 239);
-  --black: rgb(89, 152, 133);
-  --light: #fffef5;
-  --white: white;
-  --default: #eee;
-
-  
-  --animLength: 12s;
-  --animDelay: 1.6s;
-  
-  /* -- contrast: #F5DBF7, C6D4B4*/
-  --contrast: #D9CEB8;
-}
-
 a:hover {
   background: var(--contrast);
 }
@@ -45,7 +27,7 @@ body {
   z-index: 1;
   opacity: 0;
   animation: fadeIn var(--animLength) var(--animDelay) forwards;
-
+  cursor: crosshair;
 }
 .terminal {
   font-family: 'Terminal Grotesque', monospace;
@@ -67,6 +49,11 @@ body {
   color: var(--default);
   animation: fadeInLight var(--animLength) var(--animDelay) forwards, fadeInBorder var(--animLength) var(--animDelay) forwards;
 }
+.button.lightFill:hover  {
+  background: var(--contrast) !important; 
+  color: black !important;
+  border: 1px solid black !important;
+}
 .border {
   border: 1px solid var(--default);
 }
@@ -76,14 +63,9 @@ body {
 }
 
 
-.button:hover {
-  background: var(--white);
-  border: 1px solid black;
-}
-
 .fade {
   opacity: 0;
-  animation: fadeIn 0.5s forwards;
+  animation: fadeIn var(--animLength) var(--animDelay) forwards;
 }
 
 
@@ -137,7 +119,7 @@ body {
 }
 
 #canvas-container {
-  --bleedEdge: calc(var(--spacing) * 0.75);
+  --bleedEdge: calc(var(--spacing));
   width: calc(100% + 2 * var(--bleedEdge));
   position: relative;
   left: calc(-1 * var(--bleedEdge));

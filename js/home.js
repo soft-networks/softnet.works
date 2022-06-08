@@ -54,15 +54,13 @@ const backgroundsketch = (p) => {
 
   let wos = [];
   let t = 253;
+  let gs = 512;
   let xs ;
   let ys ;
   let container = document.getElementById("main-container");
 
 
   let mp = {x: 0, y:0};
-  p.preload = () => {
-    grass = p.loadImage("assets/IMG_1569.jpeg");
-  };
   p.setup = () => {
     let cnv = p.createCanvas(container.offsetWidth, container.offsetHeight);
     cnv.id("bg-container")
@@ -71,24 +69,12 @@ const backgroundsketch = (p) => {
     p.frameRate(12);
     p.noStroke();
     drawPixels();
-    xs = p.width / grass.width;
-    ys = p.height / grass.height;
+    xs = p.width / gs;
+    ys = p.height / gs;
   };
   function drawPixels() {
-    grass.loadPixels();
-
-    for (let x = 0; x < grass.width; x = x + ps) {
-      for (let y = 0; y < grass.height ; y = y + ps) {
-        let index = (x  + grass.width * y) * 4;
-        let r = grass.pixels[index];
-        let g = grass.pixels[index + 1];
-        let b = grass.pixels[index + 2];
-        // let a = grass.pixels[index + 3];
-
-        if (g > 254) {
-          wos.push({ x: x, y: y, c: HIGHLIGHTCOLORS[0], g: g});
-        }
-      }
+    for (let i =0 ; i < 100; i++) {
+      wos.push({x: rnd(0, gs), y: rnd(0, gs), c: HIGHLIGHTCOLORS[0], g: 255});
     }
     drawWind();
   }
@@ -108,8 +94,8 @@ const backgroundsketch = (p) => {
 
   p.windowResized = () => {
     p.resizeCanvas(container.offsetWidth, container.offsetHeight)
-    xs = p.width / grass.width;
-    ys = p.height / grass.height;
+    xs = p.width / gs;
+    ys = p.height / gs;
     drawWind();
   }
   function drawWind(){
@@ -131,7 +117,7 @@ const backgroundsketch = (p) => {
       let wo = wos[i];
   
       if (wo.g > t) {
-        p.fill(120, 180, 165);
+        p.fill(120, 190, 165);
         // p.square(round(wo.x * xs),  round(wo.y * ys), ps);
         p.square(round(wo.x * xs),  round(wo.y * ys), ps);
       }
@@ -139,3 +125,12 @@ const backgroundsketch = (p) => {
   }
 };
 new p5(backgroundsketch);
+
+
+const enterEmail = (el) => {
+  el.placeholder = "enter your email";
+}
+
+const resetPlaceholder = (el) => {
+  el.placeholder = "sign up for mailing list";
+}
