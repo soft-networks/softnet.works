@@ -55,6 +55,7 @@ html, body {
 a {
   color: inherit;
   text-decoration: underline;
+  cursor: pointer;
 }
 *::selection {
   background-color: var(--contrast);

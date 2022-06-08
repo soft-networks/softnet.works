@@ -15,10 +15,10 @@ const logoSketch = (p) => {
     trees.push(
       new Tree(
         grid,
-        LOGO_PARAMS.initAngle,
+        ICON_PARAMS.initAngle,
         BRANCH_LENGTH,
         cv(grid.nCols * 0.5 - 2, grid.nRows * 0.5 + (BRANCH_LENGTH * MAX_DEPTH)),
-        LOGO_PARAMS.params
+        ICON_PARAMS.params
       )
     );
     for (let i = 0; i < 5; i++) {
@@ -33,7 +33,6 @@ const logoSketch = (p) => {
   p.draw = () => {
     p.noStroke();
     drawHelper.drawNew();
-    moveAndDrawDust(windObjects, drawHelper);
     growTrees(trees);
   };
   p.keyPressed = () => {

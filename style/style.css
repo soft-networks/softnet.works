@@ -10,6 +10,7 @@ body {
   
 }
 
+
 #bg-container {
   position: absolute;
   top: 0;
@@ -58,7 +59,13 @@ body {
   animation: fadeIn var(--animLength) var(--animDelay) forwards;
 }
 
+.ml-embedded {
+  flex: 1
+}
 
+.ml-embedded * {
+  all: unset;
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;

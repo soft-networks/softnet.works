@@ -14,12 +14,27 @@
   <script src="js/lib/utils.js"></script>
   <script src="js/classes.js"></script>
   <script src="js/mailer.js"></script>
+
+  <!-- MailerLite Universal -->
+  <script>
+    (function (w, d, e, u, f, l, n) {
+      w[f] = w[f] || function () {
+        (w[f].q = w[f].q || [])
+        .push(arguments);
+      }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+    })
+      (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+    ml('account', '68614');
+  </script>
+  <!-- End MailerLite Universal -->
+
 </head>
 
 <body>
 
   <main class="padded:s1 fullBleed center darkFill" id="main-container">
-    <div class="stack" >
+    <div class="stack">
       <div class="lightFill padded narrow stack border ">
         <div id="canvas-container" class="noOverflowX fullWidth"></div>
         <p><span class="terminal contrastFill">soft networks</span> is an exploratory design and development studio.
@@ -37,16 +52,10 @@
           <span><a href="https://github.com/soft-networks" target="_blank">github</a></span>
         </span>
       </div>
-      <div class="horizontal-stack no-gap narrow border button lightFill ">
-        <input class="flex-1 padded " placeholder="sign up for our mailing list" onmouseover="enterEmail(this)" onmouseout="resetPlaceholder(this)">
-
-        </input>
-        <div class="align-end padded ">
-          →
-        </div>
+      <div class="padded narrow border button lightFill ml-onclick-form " onclick="ml('show', 'QspZjN', true)">
+        sign up for our mailing list
       </div>
-     
-    
+
     </div>
   </main>
   <script src="js/home.js"></script>
