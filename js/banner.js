@@ -31,7 +31,9 @@ const bannerSketch = (p) => {
   };
   p.draw = () => {
     p.noStroke();
-    drawHelper.drawNew(p, grid);
+    p.background("#fffef5");
+
+    drawHelper.drawAll(p, grid);
     moveAndDrawDust(windObjects, drawHelper);
     growTrees(trees);
   };
