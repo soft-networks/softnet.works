@@ -1,11 +1,11 @@
 const WAIT_TIME = 0;
 
 const bannerSketch = (p) => {
-  const canvassize = 1024;
+  const canvassize = 512;
   const canvasaspect = 2;
 
   let grid = new Grid(GRID_SIZE, GRID_SIZE / canvasaspect);
-  let drawHelper = new DrawGrid(p, grid, cellsize);
+  let drawHelper = new DrawGrid(p, grid, 2);
 
   let trees = [];
   let windObjects = [];
@@ -24,17 +24,18 @@ const bannerSketch = (p) => {
   }
   p.setup = () => {
     bannerSetup();
-    canvas = p.createCanvas(canvassize, canvassize / canvasaspect);
+    canvas = p.createCanvas(canvassize, canvassize);
     canvas.imageSmoothingEnabled = false;
+    p.noSmooth();
     p.frameRate(12);
   };
   p.draw = () => {
     p.noStroke();
-    p.translate(grid.nCols * cellsize * 0.5, grid.nRows * 0.3 * cellsize);
     drawHelper.drawNew(p, grid);
     moveAndDrawDust(windObjects, drawHelper);
     growTrees(trees);
   };
 };
+
 
 setTimeout(() => new p5(bannerSketch), WAIT_TIME);

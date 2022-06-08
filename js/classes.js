@@ -20,7 +20,7 @@ let LOGO_PARAMS = {
   },
 };
 
-let USE_BW_COLORS = false;
+let USE_BW_COLORS = true;
 
 let PALETTE = {
   leafBrown: "#AD9381",
