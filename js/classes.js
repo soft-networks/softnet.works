@@ -3,25 +3,26 @@
  * CONSTANTS
  */
 
-let GRID_SIZE = 256;
-let DEBUG = false;
-let MAX_DEPTH = 4;
-let LEAF_DEPTH = 10;
-let BRANCH_LENGTH = 4;
-const cellsize = 2;
 
-let LOGO_PARAMS = {
-  initAngle: PI / 6.28,
-  params: {
-    bendAngle: PI / 24,
-    longTrunk: 4,
-    longBranch: 3,
-    forcedStrayBranch: true
-  },
-};
-
+ let GRID_SIZE = 256;
+ let DEBUG = false;
+ let MAX_DEPTH = 4;
+ let LEAF_DEPTH = 10;
+ let BRANCH_LENGTH = 5;
+ const cellsize = 2;
+ 
+ let LOGO_PARAMS = {
+   initAngle: PI / 6.28,
+   params: {
+     bendAngle: PI / 24,
+     longTrunk: 4,
+     longBranch: 3,
+     forcedStrayBranch: true
+   },
+ };
+ 
 let ICON_PARAMS = {
-  initAngle: PI / 6.28,
+  initAngle: PI / 4.28,
   params: {
     bendAngle: PI / 24,
     longTrunk: 4,
