@@ -3,11 +3,9 @@ a:hover {
   background: var(--contrast);
 }
 body {
-  background: var(--white);
   font-family: 'Authentic Sans', Helvetica, sans-serif;
   font-size: var(--s0);
   line-height: 1.314;
-  
 }
 
 
@@ -41,7 +39,7 @@ body {
   animation: fadeInLight var(--animLength) var(--animDelay) forwards, fadeInBorder var(--animLength) var(--animDelay) forwards;
 }
 .button.lightFill:hover  {
-  background: var(--contrast) !important; 
+  background: var(--white) !important; 
   color: black !important;
   border: 1px solid black !important;
 }
@@ -59,13 +57,59 @@ body {
   animation: fadeIn var(--animLength) var(--animDelay) forwards;
 }
 
-.ml-embedded {
+.ml-block-form {
+  display: flex;
+}
+
+.ml-form-formContent {
   flex: 1
 }
 
-.ml-embedded * {
-  all: unset;
+.ml-block-form input {
+  width: calc(100% - 2* var(--spacing));
 }
+
+.ml-block-form input, .ml-block-form button {
+  padding: var(--spacing);
+}
+
+
+.ml-form-successContent {
+  padding: var(--spacing);
+}
+
+.ml-block-form button {
+  display: block;
+  all: unset;
+  cursor: pointer;
+  color: var(--contrast);
+  padding: var(--spacing);
+}
+
+.ml-form-embedSubmit {
+  border-left: 1px solid black;
+  
+  display: none;
+}
+
+.ml-block-form:hover .ml-form-embedSubmit {
+  opacity: 1;
+  display: flex;
+}
+
+.ml-block-form:hover button {
+  color: black;
+  background: var(--light);
+}
+
+.ml-block-form button:hover , .ml-block-form button:focus {
+  background: var(--contrast);
+}
+
+#mlb2-623195 * {
+  font-family: inherit;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

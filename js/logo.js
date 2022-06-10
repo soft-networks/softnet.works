@@ -10,7 +10,6 @@ const logoSketch = (p) => {
   let trees = [];
   let windObjects = [];
 
-
   function logoSetup() {
     trees.push(
       new Tree(
@@ -71,6 +70,7 @@ const bannerSketch = (p) => {
     canvas.imageSmoothingEnabled = false;
     p.noSmooth();
     p.frameRate(12);
+
   };
   p.draw = () => {
     p.noStroke();
@@ -79,6 +79,7 @@ const bannerSketch = (p) => {
     growTrees(trees);
   };
   p.keyPressed = () => {
+
     if (p.key == "s") {
       console.log("saving");
       p.saveCanvas("banner" + Date.now(), "png");

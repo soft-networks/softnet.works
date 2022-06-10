@@ -7,28 +7,11 @@
   </meta>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes">
-
   <link rel="stylesheet" href="./style/core.css" />
   <link rel="stylesheet" href="./style/style.css" />
   <script src="js/lib/p5.js"></script>
   <script src="js/lib/utils.js"></script>
   <script src="js/classes.js"></script>
-  <script src="js/mailer.js"></script>
-
-  <!-- MailerLite Universal -->
-  <script>
-    (function (w, d, e, u, f, l, n) {
-      w[f] = w[f] || function () {
-        (w[f].q = w[f].q || [])
-        .push(arguments);
-      }, l = d.createElement(e), l.async = 1, l.src = u,
-      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
-    })
-      (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
-    ml('account', '68614');
-  </script>
-  <!-- End MailerLite Universal -->
-
 </head>
 
 <body>
@@ -52,9 +35,65 @@
           <span><a href="https://github.com/soft-networks" target="_blank">github</a></span>
         </span>
       </div>
-      <div class="padded narrow border button lightFill ml-onclick-form " onclick="ml('show', 'QspZjN', true)">
-        sign up for our mailing list
+      <div class="narrow border button lightFill">
+        <div id="mlb2-623195" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-623195">
+          <div class="ml-form-align-center ">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+
+                <div class="ml-form-embedContent" style="margin-bottom: 0px; ">
+
+                </div>
+
+                <form class="ml-block-form"
+                  action="https://assets.mailerlite.com/jsonp/68614/forms/57211769778603342/subscribe" data-code=""
+                  method="post" target="_blank">
+                  <div class="ml-form-formContent">
+
+
+
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+
+                        <!-- input -->
+                        <input aria-label="email" aria-required="true" type="email" class="form-control"
+                          data-inputmask="" name="fields[email]" placeholder="Join our mailing list" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">Subscribe</button>
+                    <button disabled="disabled" style="display: none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">loading...</span>
+                    </button>
+                  </div>
+
+
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+
+              <div class="ml-form-successBody row-success" style="display: none">
+                <div class="ml-form-successContent">
+                  thank you for joining our mailing list ⚘
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          function ml_webform_success_623195() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-623195 .row-success').show();
+            $('.ml-subscribe-form-623195 .row-form').hide();
+          }
+        </script>
+        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v982545f425161d5f5c95b96ab6c34e1b"
+          type="text/javascript"></script>
       </div>
+    </div>
 
     </div>
   </main>

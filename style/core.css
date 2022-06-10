@@ -35,6 +35,9 @@
   
   --animLength: 12s;
   --animDelay: 1.6s;
+
+  --animLength: 1s;
+  --animDelay: 0s;
   
   /* -- contrast: #F5DBF7, C6D4B4*/
   --contrast: #D9CEB8;

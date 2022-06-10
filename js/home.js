@@ -42,6 +42,7 @@ const homesketch = (p) => {
     p.resizeCanvas(containerSize, p.height);
   };
 };
+new p5(homesketch);
 const backgroundsketch = (p) => {
   let grass;
   let ps = 2;
@@ -125,5 +126,4 @@ const enterEmail = (el) => {
 const resetPlaceholder = (el) => {
   el.placeholder = "sign up for mailing list";
 }
-new p5(homesketch);
 new p5(backgroundsketch);
