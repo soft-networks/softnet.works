@@ -119,11 +119,4 @@ const backgroundsketch = (p) => {
     }
   }
 };
-const enterEmail = (el) => {
-  el.placeholder = "enter your email";
-}
-
-const resetPlaceholder = (el) => {
-  el.placeholder = "sign up for mailing list";
-}
 new p5(backgroundsketch);
