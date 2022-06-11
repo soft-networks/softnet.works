@@ -56,8 +56,11 @@
           <span><a href="https://github.com/soft-networks" target="_blank">github</a></span>
         </span>
       </div>
-      <div class="narrow border button lightFill">
-        <div id="mlb2-623195" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-623195">
+      <div class="narrow lightFill">
+        <div id="email-prompt" class="padded button border" onclick="toggleSubscriptionForm()">
+          subscribe to our newsletter
+        </div>
+        <div id="mlb2-623195" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-623195 hide ">
           <div class="ml-form-align-center ">
             <div class="ml-form-embedWrapper embedForm">
               <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
@@ -70,8 +73,8 @@
                     <div class="ml-form-fieldRow ml-last-item">
                       <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
                         <input aria-label="email" aria-required="true" type="email" class="form-control"
-                          data-inputmask="" name="fields[email]" placeholder="subscribe to our newsletter"
-                          autocomplete="email">
+                          data-inputmask="" name="fields[email]" placeholder="enter your email"
+                          autocomplete="email" id="email-input">
                       </div>
                     </div>
                   </div>

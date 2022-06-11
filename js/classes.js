@@ -21,13 +21,16 @@
    },
  };
  
+// BRANCH_LENGTH = 4; 
+// LEAF_DEPTH = 5;
+
 let ICON_PARAMS = {
-  initAngle: PI / 4.28,
+  initAngle: PI / 3.8,
   params: {
     bendAngle: PI / 24,
-    longTrunk: 4,
+    longTrunk: 3,
     longBranch: 3,
-    forcedStrayBranch: true
+    forcedStrayBranch: false
   },
 };
 

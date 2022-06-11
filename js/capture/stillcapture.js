@@ -4,9 +4,9 @@ const logoSketch = (p) => {
 
   const canvassize = 512;
   const canvasaspect = 1;
-
+  const cellsizelarger = cellsize * 2;
   let grid = new Grid(GRID_SIZE, GRID_SIZE / canvasaspect);
-  let drawHelper = new DrawGrid(p, grid, cellsize);
+  let drawHelper = new DrawGrid(p, grid, cellsizelarger);
   let trees = [];
   let windObjects = [];
 
@@ -31,6 +31,7 @@ const logoSketch = (p) => {
   };
   p.draw = () => {
     p.noStroke();
+    p.translate(-canvassize / 2, -canvassize / 2);
     drawHelper.drawNew();
     growTrees(trees);
   };

@@ -120,3 +120,16 @@ const backgroundsketch = (p) => {
   }
 };
 new p5(backgroundsketch);
+
+function toggleSubscriptionForm() {
+  console.log("eyy");
+
+  let prompt = document.getElementById("email-prompt");
+  prompt.style.display = "none";
+
+  let emailform = document.getElementById("mlb2-623195");
+  emailform.style.display = "block";
+
+  let emailinput = document.getElementById("email-input");
+  emailinput.focus();
+}
