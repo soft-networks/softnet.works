@@ -33,16 +33,15 @@
   --default: #eee;
 
   
-  --animLength: 12s;
-  --animDelay: 1.6s;
 
-  --animLength: 1s;
-  --animDelay: 0.5s;
+
+  --animLength: 2s;
+  --animDelay: 1s;
 
   
   /* -- contrast: #F5DBF7, C6D4B4*/
   --contrast: #D9CEB8;
-
+  --contrastReadable: #D9CEB8;
 }
 
 
@@ -65,6 +64,10 @@ a {
   background-color: var(--contrast);
 }
 
+.relative {
+  position: relative;
+}
+
 .noEvents {
   pointer-events: none;
 }
@@ -77,6 +80,9 @@ a {
 }
 .padded\:s1 {
   padding: var(--s1);
+}
+.paddedLeft {
+  padding-left: var(--s1);
 }
 .marginTop {
   margin-top:  var(--spacing);
@@ -103,7 +109,7 @@ a {
 }
 
 .caption {
-  font-size: var(--s-1);
+  font-size: var(--s0);
   color: var(--black);
 }
 .noOverflow {
@@ -118,6 +124,7 @@ a {
 .stack {
   display: flex; 
   flex-direction: column;
+  max-width: 100%;
 }
 
 .stack > * + * {
@@ -132,7 +139,9 @@ a {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  
 }
+
 
 
 .horizontal-stack > * + * {
@@ -140,6 +149,10 @@ a {
 }
 .horizontal-stack.no-gap > * + * {
   margin-left: 0;
+}
+
+.horizontal-stack .align-end {
+  margin-left: auto;
 }
 
 .flex-1 {
@@ -153,6 +166,9 @@ a {
   z-index: 2;
 }
 
+.narrow img {
+  max-width: 100%;
+}
 input {
   all: unset;
 }

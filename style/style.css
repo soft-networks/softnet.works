@@ -24,6 +24,12 @@ body {
   letter-spacing: 0ch;
 }
 
+em {
+  text-decoration: none;
+  font-style: inherit;
+  
+}
+
 .center {
   display: flex;
   align-items: center;
@@ -37,6 +43,20 @@ body {
 .lightFill {
   color: var(--default);
   animation: fadeInLight var(--animLength) var(--animDelay) forwards, fadeInBorder var(--animLength) var(--animDelay) forwards;
+}
+
+.caption {
+  opacity: 0;
+  animation: fadeIn var(--animLength) var(--animDelay) forwards;
+}
+
+
+
+.bullet {
+  position: absolute;
+  left:0;
+  top: 0;
+  z-index: 3;;
 }
 .button {
   cursor: pointer;
@@ -170,6 +190,7 @@ canvas {
 }
 
 
+
 @media only screen and (max-width: 500px) {
 	/* Mobile related CSS goes here (400px and under) */
   :root {
@@ -180,4 +201,17 @@ canvas {
   .center {
     display: block;
   }
+ 
+}
+
+@media only screen and (max-width: 986px) {
+  .horizontal-stack.mobile-vertical {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .horizontal-stack.mobile-vertical > * + *{
+    margin-left: 0;
+    margin-top: var(--spacing);
+  }
+  
 }

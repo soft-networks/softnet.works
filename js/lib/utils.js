@@ -7,7 +7,7 @@ const randHighlightColor  = () => {
   return HIGHLIGHTCOLORS[floor(rnd(0, HIGHLIGHTCOLORS.length))];
 }
 let floor = Math.floor;
-function dist(p1,p2) {
+function pdist(p1,p2) {
   return Math.hypot(p2.x - p1.x, p2.y - p1.y);
 }
 function cv(x, y , z ) {
