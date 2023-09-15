@@ -1,0 +1,13 @@
+---
+import '@/styles/capture.css'
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="soft networks" className="stack padded">
+  <script is:inline src="/js/lib/ccapture.min.js"></script>
+  <script is:inline src="/js/lib/utils.js"></script>
+  <script is:inline src="/js/classes.js"></script>
+
+  video is recording, press "g" to stop (quickly or the website will crash :D )
+  <script is:inline src="/js/capture/videocapture.js"></script>
+</Layout>

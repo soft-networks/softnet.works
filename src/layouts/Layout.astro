@@ -1,0 +1,46 @@
+---
+import '@/styles/core.css';
+import '@/styles/style.css';
+interface Props {
+	title: string;
+	className?: string;
+}
+
+const { title, className } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>{title}</title>
+
+    <!-- HTML Meta Tags -->
+		<meta charset="UTF-8" />
+    <meta name="description" content="soft networks is an exploratory design and development studio, creating slow, intimate futures for social software.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:url" content="http://softnet.works/">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="soft networks">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+		<!-- Facebook Meta Tags -->
+		<meta property="og:description" content="soft networks is an exploratory design and development studio, creating slow, intimate futures for social software.">
+		<meta property="og:image" content="http://softnet.works/assets/opengraph-preview.png">
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="softnet.works">
+		<meta property="twitter:url" content="http://softnet.works/">
+		<meta name="twitter:title" content="soft networks">
+		<meta name="twitter:description" content="soft networks is an exploratory design and development studio, creating slow, intimate futures for social software.">
+		<meta name="twitter:image" content="http://softnet.works/assets/opengraph-preview.png">
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <script is:inline src="/js/lib/p5.js"></script>
+	</head>
+	<body class={className}>
+		<slot />
+	</body>
+</html>
+<style is:global>
+</style>
