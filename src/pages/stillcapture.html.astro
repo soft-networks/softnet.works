@@ -1,0 +1,12 @@
+---
+import '@/styles/capture.css'
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="soft networks" className="stack padded">
+  <script is:inline src="/js/lib/utils.js"></script>
+  <script is:inline src="/js/classes.js"></script>
+
+  press s at any time to save an image for both canvases
+  <script is:inline src="/js/capture/stillcapture.js"></script>
+</Layout>
