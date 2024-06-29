@@ -43,7 +43,7 @@ let PALETTE = {
   pink: "#FF9EE5",
   darkGreen: "rgb(70, 116, 91)",
   black: "#000000",
-  leafGray: "rgb(200,200,200)",
+  leafGray: "rgb(180, 220, 200)",
   fruitGray: "rgb(100,100,100)",
 }
 
