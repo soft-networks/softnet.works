@@ -136,7 +136,7 @@ a {
 .horizontal-stack {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: stretch;
   
 }
 
