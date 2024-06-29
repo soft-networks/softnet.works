@@ -5,7 +5,7 @@ a:hover {
 body {
   font-family: 'Authentic Sans', Helvetica, sans-serif;
   font-size: var(--s0);
-  line-height: 1.314;
+  line-height: 1.4;
 }
 
 
@@ -166,14 +166,14 @@ em {
   }
 }
 
-@keyframes fadeInBorder {
+/* @keyframes fadeInBorder {
   0% {
     border: 1px solid var(--default);
   }
   100% {
     border: 1px solid var(--black);
   }
-}
+} */
 
 #canvas-container {
   --bleedEdge: calc(var(--spacing));

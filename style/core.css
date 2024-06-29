@@ -28,9 +28,9 @@
   
   --dark: rgb(189, 222, 239);
   --black: rgb(70, 116, 91);
-  --light: #fffef5;
+  --light: #fffffc;
   --white: white;
-  --default: #eee;
+  --default: white;
 
   
 
@@ -41,7 +41,7 @@
   
   /* -- contrast: #F5DBF7, C6D4B4*/
   --contrast: #D9CEB8;
-  --contrastReadable: #D9CEB8;
+  --contrastReadable: #837f79;
 }
 
 
@@ -87,9 +87,7 @@ a {
 .marginTop {
   margin-top:  var(--spacing);
 }
-.border {
-  border: 1px solid var(--black);
-}
+
 .fullBleed {
   width: 100%;
   height: 100%;
@@ -110,7 +108,7 @@ a {
 
 .caption {
   font-size: var(--s0);
-  color: var(--black);
+  color: var(--contrastReadable);
 }
 .noOverflow {
   overflow: hidden;
