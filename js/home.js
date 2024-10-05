@@ -112,7 +112,7 @@ const backgroundsketch = (p) => {
       let wo = wos[i];
   
       if (wo.g > t) {
-        p.fill(120, 190, 165);
+        p.fill(PALETTE.leafBrownLight);
         // p.square(round(wo.x * xs),  round(wo.y * ys), ps);
         p.square(round(wo.x * xs),  round(wo.y * ys), ps);
       }

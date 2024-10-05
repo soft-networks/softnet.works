@@ -3,14 +3,10 @@
   src: url('/assets/AUTHENTICSans-90.otf');
 }
 
-@font-face {
-  font-family: 'Terminal Grotesque';
-  src: url('/assets/terminal-grotesque.ttf');
-}
 
 
 :root {
-  --ratio: 1.4;
+  --ratio: 1.618;
   --s0: 1em;
   --s1: calc(var(--s0) * var(--ratio));
   --s2: calc(var(--s1) * var(--ratio));
@@ -26,22 +22,12 @@
   --spacing: var(--s1);
   --stackSpacing: var(--s0);
   
-  --dark: rgb(189, 222, 239);
-  --black: rgb(70, 116, 91);
-  --light: #fffef5;
-  --white: white;
-  --default: #eee;
-
-  
-
-
+  --light: #fff9f2;
+  --dark: #2c1500;
+  --gray: #8b7866;
+  --contrast: rgb(254, 225, 151);
   --animLength: 2s;
   --animDelay: 1s;
-
-  
-  /* -- contrast: #F5DBF7, C6D4B4*/
-  --contrast: #D9CEB8;
-  --contrastReadable: #D9CEB8;
 }
 
 
@@ -55,26 +41,13 @@ html, body {
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: underline;
-  cursor: pointer;
-}
-*::selection {
-  background-color: var(--contrast);
-}
 
-.relative {
-  position: relative;
-}
 
-.noEvents {
-  pointer-events: none;
-}
-.hasEvents {
-  pointer-events: all;
-}
+/* SPACING */ 
 
+.marginTop {
+  margin-top:  var(--s4);
+}
 .padded {
   padding: var(--spacing);
 }
@@ -84,12 +57,52 @@ a {
 .paddedLeft {
   padding-left: var(--s1);
 }
-.marginTop {
-  margin-top:  var(--spacing);
+
+
+/* COLORS / TYPOGRAPHY */ 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  padding: 1em;
+  font-size: 1.0em;
+  font-weight: 400;
+  color: var(--dark);
 }
+
+em {
+  text-decoration: none;
+  font-style: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: ne-resize;
+}
+*::selection {
+  background-color: pink;
+}
+
+.lightFill {
+  background: var(--light);
+}
+.contrastFill {
+  background: var(--contrast);
+}
+.contrastFill::selection {
+  background-color: var(--gray);
+}
+
+.grayColor {
+  color: var(--gray);
+}
+
 .border {
   border: 1px solid var(--black);
 }
+
+/* SIZING*/ 
+
 .fullBleed {
   width: 100%;
   height: 100%;
@@ -101,35 +114,49 @@ a {
   width: 100%;
 }
 
-.whiteFill {
-  background: var(--white);
-}
-.contrastFill {
-  background: var(--contrast);
+.narrow {
+  width: 48ch;
+  max-width: 100%;
 }
 
-.caption {
-  font-size: var(--s0);
-  color: var(--black);
+.narrow img {
+  max-width: 100%;
 }
-.noOverflow {
-  overflow: hidden;
+
+
+/*STRUCTURE */ 
+
+.relative {
+  position: relative;
 }
-.noOverflowX {
-  overflow: hidden;
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.hide {
-  display: none;
-}
-.stack {
+
+
+.stack, .stack\:s1, .stack\:s2{
   display: flex; 
   flex-direction: column;
   max-width: 100%;
 }
 
 .stack > * + * {
-  margin-top: var(--stackSpacing);
+  margin-top: var(--s0);
 }
+
+
+
+.stack\:s1 > * + * {
+  margin-top: var(--s1);
+}
+
+.stack\:s2 > * + * {
+  margin-top: var(--s2);
+}
+
 
 .stack .align-end {
   margin-top: auto;
@@ -141,8 +168,6 @@ a {
   align-items: flex-start;
   
 }
-
-
 
 .horizontal-stack > * + * {
   margin-left: var(--stackSpacing);
@@ -159,16 +184,26 @@ a {
   flex: 1
 }
 
-
-.narrow {
-  width: calc(512px - 2 * var(--spacing));
-  max-width: 100%;
-  z-index: 2;
+.noOverflow {
+  overflow: hidden;
+}
+.noOverflowX {
+  overflow: hidden;
+}
+.hide {
+  display: none;
 }
 
-.narrow img {
-  max-width: 100%;
+/* INTERACTIVITY */
+
+.noEvents {
+  pointer-events: none;
 }
+.hasEvents {
+  pointer-events: all;
+}
+
+
 input {
   all: unset;
 }
@@ -176,8 +211,57 @@ input::placeholder {
   color: inherit;
 }
 
-.center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+/* SITE SPECIFIC ELEMENTS */
+
+
+#canvas-container {
+  --bleedEdge: calc(var(--spacing));
+  width: calc(100% + 2 * var(--bleedEdge));
+  position: relative;
+  left: calc(-1 * var(--bleedEdge));
+}
+#canvas-container {
+  min-height: 152px;
+}
+
+canvas {
+  image-rendering: pixelated;
+}
+
+#bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fadeIn var(--animLength) var(--animDelay) forwards;
+  cursor: crosshair;
+}
+
+.narrow {
+  z-index: 1;
+}
+
+@media only screen and (max-width: 500px) {
+	/* Mobile related CSS goes here (400px and under) */
+  :root {
+    --s0: 1.03em;
+    --spacing: var(--s0);
+    --stackSpacing: var(--s-1);
+  }
+  .center {
+    display: block;
+  }
+ 
+}
+
+@media only screen and (max-width: 986px) {
+  .horizontal-stack.mobile-vertical {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .horizontal-stack.mobile-vertical > * + *{
+    margin-left: 0;
+    margin-top: var(--spacing);
+  }
+  
 }

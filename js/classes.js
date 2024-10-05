@@ -35,16 +35,19 @@ let ICON_PARAMS = {
 };
 
 
-let USE_BW_COLORS = true;
+let USE_BW_COLORS = false;
 
 let PALETTE = {
   leafBrown: "#AD9381",
-  fruitBrown: "#75492B",
+  leafBrownLight: "#D6C1B3",
+  fruitBrown: "#8b7866",
   pink: "#FF9EE5",
   darkGreen: "rgb(70, 116, 91)",
   black: "#000000",
   leafGray: "rgb(200,200,200)",
   fruitGray: "rgb(100,100,100)",
+  orange: "#ff842b",
+  yellow: "#ff842b"
 }
 
 //Black and white 
@@ -56,8 +59,8 @@ let HIGHLIGHTCOLORS = [PALETTE.pink, PALETTE.pink];
 
 if (!USE_BW_COLORS) {
   //Blue bg
-  MAIN_HIGHLIGHT_COLOR = PALETTE.darkGreen;
-  HIGHLIGHTCOLORS = [PALETTE.pink, PALETTE.pink];
+  MAIN_HIGHLIGHT_COLOR = PALETTE.leafBrown;
+  HIGHLIGHTCOLORS = [PALETTE.pink, PALETTE.orange, PALETTE.yellow];
 }
 
 
@@ -209,7 +212,7 @@ class Tree {
       let mindex = this.grid.mapPosToGrid(node.pos);
       let adjacentEmpty = this.grid.getEmptyAdjacentCell(mindex.x, mindex.y);
       if (adjacentEmpty) {
-        let flowerIndex = floor(rn(2, 3.2));
+        let flowerIndex = floor(rn(2, 5.2));
         this.grid.addToGrid(adjacentEmpty.x, adjacentEmpty.y, flowerIndex);
         let nextLeafIndex = node.leafIndex !== undefined ? node.leafIndex + 1 : 0;
         nextLeafIndex = flowerIndex == 3 ? LEAF_DEPTH : nextLeafIndex;
@@ -308,6 +311,9 @@ class DrawGrid {
         break;
       case 4:
         p.fill(HIGHLIGHTCOLORS[1]);
+        break;
+      case 5:
+        p.fill(HIGHLIGHTCOLORS[2]);
         break;
       case "x":
         p.erase();
